@@ -1,0 +1,65 @@
+{
+  "name": "dotswan/modules-auto-discover",
+  "description": "Discover configs, translations, views, and .. automatically",
+  "keywords": [
+    "dotswan",
+    "laravel",
+    "nwidart-modules",
+    "modules"
+  ],
+  "homepage": "https://github.com/dotswan/modules-auto-discover",
+  "support": {
+    "issues": "https://github.com/dotswan/modules-auto-discover/issues",
+    "source": "https://github.com/dotswan/modules-auto-discover"
+  },
+  "authors": [
+    {
+      "name": "Majid Alavizadeh",
+      "email": "tech@dotswan.com"
+    }
+  ],
+  "license": "MIT",
+  "prefer-stable": true,
+  "require": {
+    "php": "^8.1",
+    "nwidart/laravel-modules": "^11.0"
+  },
+  "require-dev": {
+    "laravel/pint": "^1.0",
+    "orchestra/testbench": "^8.0",
+    "pestphp/pest": "^2.0",
+    "pestphp/pest-plugin-arch": "^2.0",
+    "pestphp/pest-plugin-laravel": "^2.0",
+    "mockery/mockery": "^1.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Dotswan\\ModulesAutoDiscover\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Dotswan\\ModulesAutoDiscover\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/pest",
+    "test-coverage": "vendor/bin/pest --coverage",
+    "lint": "vendor/bin/pint"
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true,
+      "phpstan/extension-installer": true,
+      "wikimedia/composer-merge-plugin": false
+    },
+    "sort-packages": true
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Dotswan\\ModulesAutoDiscover\\ModulesAutoDiscoverServiceProvider"
+      ]
+    }
+  }
+}
